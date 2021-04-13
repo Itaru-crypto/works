@@ -1,0 +1,168 @@
+@charset "UTF-8";
+/* overall style */
+.overall {
+  font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+}
+
+a {
+  display: block;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.ptb60 {
+  padding: 60px 0;
+}
+
+/* header style */
+
+.header {
+  width: 90%;
+  /* 行間 */
+  line-height: 60px;
+  background-color: #fff;
+  /* 画面の要素を固定する */
+  position: fixed;
+  top: 50px;
+  left: 5%;
+  /* box-shadow: x方向の影 y方向の影 広がり ぼかし 色 */
+  box-shadow: 5px 5px 50px -8px #ccc;
+  /* navタグに対しても適応したいため,headerクラス */
+  text-align: center;
+  padding-top: 5px;
+  /* positionを付けている要素に対してのみ有効 */
+  z-index: 999;
+}
+
+.site-ttl {
+  width: 15%;
+  font-size: 20px;
+}
+
+.header-nav {
+  width: 60%;
+}
+
+.header-nav-list li {
+  width: 19%;
+  border-bottom: 5px solid #fff;
+  /* hoverを外した時にtransitionを使う */
+  transition: 0.5s;
+}
+
+.header-nav-list li:hover {
+  border-bottom: 5px solid #083;
+}
+
+/* fv style */
+.fv {
+  position: relative;
+}
+
+.fv video {
+  width: 100%;
+}
+
+.catch {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  font-size: 50px;
+  /* em: font-sizeのn倍値 */
+  line-height: 2em;
+  color: #fff;
+}
+
+/* feature style */
+.feature-content {
+  width: 50%;
+  position: relative;
+  margin-left: 30px;
+}
+
+.feature-body {
+  /* 高さを指定してあげることでサイズを固定できるかも？ */
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  width: 80%;
+  background-color: #fff;
+  box-shadow: 0 0 50px -8px #ccc;
+  padding: 30px;
+  transform: translateY(-50%);
+}
+
+.feature-ttl {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  /* 文字間の調整 */
+  letter-spacing: 3px;
+}
+
+.feature-text {
+  line-height: 1.8em;
+  margin: 30px;
+}
+
+.feature-btn {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.feature-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #083;
+  transition: 0.3s;
+  /* テキストよりも低く */
+  z-index: -1;
+}
+
+/* 重要！ */
+.feature-btn:hover::before {
+  width: 100%;
+}
+
+.feature-btn:hover {
+  color: #fff;
+  transition: 0.3s;
+}
+
+/* concept style */
+
+/* brand-style */
+.brand-ttl {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.brand-item {
+  width: 30%;
+  margin-bottom: 30px;
+  position: relative;
+  /* はみ出た要素を隠す */
+  overflow: hidden;
+}
+
+.brand-item img {
+  filter: grayscale(1);
+  transition: 0.3s;
+}
+
+.brand-item a:hover img {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
